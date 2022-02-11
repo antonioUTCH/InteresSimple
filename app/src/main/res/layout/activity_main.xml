@@ -101,14 +101,4 @@
             android:text="Calcular Interes"
             android:onClick="calcularInteres"/>
 
-        <TextView
-            android:id="@+id/lblResultado"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:paddingBottom="15dp"
-            android:paddingTop="15dp"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
 </LinearLayout>

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         EditText sTasa = (EditText)findViewById(R.id.txtTasa);
         EditText sPeriodo = (EditText)findViewById(R.id.txtPeriodos);
 
-        TextView sInteres = (TextView) findViewById(R.id.lblResultado);
+        //TextView sInteres = (TextView) findViewById(R.id.lblResultado);
 
         double capital = Double.parseDouble(sCapital.getText().toString());
         double tasa = Double.parseDouble(sTasa.getText().toString());
@@ -30,8 +32,12 @@ public class MainActivity extends AppCompatActivity {
         double monto = capital * (tasa/100) * periodo;
         double interes = monto + capital;
 
-        sInteres.setText("Total a pagar: " + String.valueOf(interes));
+        //sInteres.setText("Total a pagar: " + String.valueOf(interes));
 
+        new SweetAlertDialog(MainActivity.this)
+                .setTitleText("Total a pagar: " + String.valueOf(interes))
+                .setContentText("Capitalizacion de: $" + String.valueOf(interes - capital))
+                .show();
 
     }
 }
